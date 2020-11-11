@@ -1,0 +1,8 @@
+Django==2.2
+django-crispy-forms==1.9.2
+django-phonenumber-field==5.0.0
+phonenumbers==8.12.12
+pycodestyle==2.6.0
+pytz==2020.4
+sqlparse==0.4.1
+toml==0.10.2

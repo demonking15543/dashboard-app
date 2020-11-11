@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div class="row">
+    <aside class="col-md-3"></aside>
+    <aside class="col-md-6 mt-5">
+        <article class="card">
+            <div class="card-title"> User Details</div>
+            
+            <h6 class="card-text">
+            First <span style="word-spacing: 60px;">Name {{user_details.first_name}} </span></h6>
+            <h6 class="card-text">
+                Last <span style="word-spacing: 60px;">Name {{user_details.last_name}}</span>
+                </h6>
+                <h6 class="card-text">
+                    <span style="word-spacing: 100px;">Email {{user_details.email}}</span>
+                    </h6>
+                    <h6 class="card-text">
+                        Contact <span style="word-spacing: 60px;">
+                            No. 
+                        {% if user_details.contact_no %}
+                        {{user_details.contact_no}}
+
+                        {% else %}
+                        NaN  
+                        {% endif %}
+                        </span>
+                        </h6>
+            
+            
+
+        </article>
+    </aside>
+    <aside class="col-md-3"></aside>
+
+</div>
+    
+{% endblock content %}
+    

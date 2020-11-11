@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row">
+        <aside class="col-sm-4"></aside>
+        <aside class="col-sm-4">
+            <article class="card">
+                <form  method="post">
+                    <div class="card-title">Log In</div>
+                    {% csrf_token %}
+                    {{form|crispy}}
+                           
+                    <input type="submit" name="submit" value="submit" />
+                    <input type="hidden" name="next" value="{{ next }}">
+                </form>
+
+            </article>
+        </aside>
+        <aside class="col-sm-4"></aside>
+
+    </div>
+{% endblock content %}
+    
+
+
