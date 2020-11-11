@@ -5,13 +5,15 @@
 <div class="row">
     <aside class="col-sm-2"></aside>
     <aside class="col-sm-8">
-    <article class="body">
+    <article class="card-body">
         <form method="post">
+            <div class="card-title"><span class="badge badge-secondary">Sign Up</span></div>
+
             {% csrf_token %} <!-- without this token form will never be submitted.-->
             {{form|crispy}}
             
             <button type="submit" class="btn btn-success">Submit</button>
-            <input type="hidden" name="next" value="{% if request.POST.next %}{{ request.POST.next }}{% else %}{{ request.GET.next }}{% endif %}"/>
+        
 
 
 

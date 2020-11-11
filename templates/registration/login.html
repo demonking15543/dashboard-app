@@ -2,25 +2,32 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <div class="row">
-        <aside class="col-sm-4"></aside>
-        <aside class="col-sm-4">
-            <article class="card">
-                <form  method="post">
-                    <div class="card-title">Log In</div>
-                    {% csrf_token %}
-                    {{form|crispy}}
-                           
-                    <input type="submit" name="submit" value="submit" />
-                    <input type="hidden" name="next" value="{{ next }}">
-                </form>
+<div class="row">
+    <aside class="col-sm-4"></aside>
+    <aside class="col-sm-4 mt-4">
 
-            </article>
-        </aside>
-        <aside class="col-sm-4"></aside>
 
-    </div>
+        <article class="card">
+            {% if messages %}
+            <ul class="messages list-group">
+                {% for message in messages %}
+                <li{% if message.tags %} class="list-group-item list-group-item-{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+            <form method="post">
+                <div class="card-title"><span class="badge badge-secondary">Log In</span></div>
+                {% csrf_token %}
+                {{form|crispy}}
+
+                <input type="submit" class="btn btn-success" name="submit" value="submit" />
+                
+            </form>
+
+        </article>
+    </aside>
+    <aside class="col-sm-4"></aside>
+
+</div>
 {% endblock content %}
-    
-
-

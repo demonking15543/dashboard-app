@@ -22,7 +22,7 @@ urlpatterns = [
 
     path('', include('home.urls')), # load all urls from urls.py inside the home app
     path('user/', include('user.urls')), # load all urls from urls.py inside the user app
-    #path('accounts/',include('django.contrib.auth.urls'))
+
 ]
 
 

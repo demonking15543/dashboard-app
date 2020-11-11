@@ -42,7 +42,7 @@ def Logout(request):
 class LoginView(FormView):
     """login view"""
 
-    form_class = UserLoginForm
+    form_class = UserLoginForm 
     success_url = reverse_lazy('dashboard')
     template_name = 'registration/login.html'
 
@@ -59,7 +59,7 @@ class LoginView(FormView):
             return HttpResponseRedirect(self.success_url)
 
         else:
-            messages.info(request, "please try again")
+            messages.warning(self.request, "please try again")
 
             return HttpResponseRedirect(reverse_lazy('login'))
 
@@ -79,6 +79,7 @@ def user_detail_view(request):
             # get requested user details that we have taken from user  at the time of signup.
             user  = get_user_model().objects.get(email=request.user.email)
         except get_user_model().DoesNotExist:
+
             messages.info(request, 'Invalid Details')
             return redirect('login')
     else:
