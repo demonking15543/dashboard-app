@@ -17,7 +17,7 @@ Project is created with:
 * django-crispy-forms
 	
 ## Setup
-To run this project, install it locally using npm:
+To run this project, install it locally:
 
 ```
  First clone this project and  then do following tasks:-
